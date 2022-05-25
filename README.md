@@ -11,3 +11,5 @@ navigate to another tab without losing the previous tabs params.
 
 Each tab has it's own `scope` that is used as a prefix to the search
 params.
+
+See example at https://remix-scoped-params-production.up.railway.app
