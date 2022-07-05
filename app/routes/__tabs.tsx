@@ -13,8 +13,27 @@ export default function Index() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Remix Scoped Params</h1>
-      <Tab.Group as="div">
+      <h1 className="text-2xl font-bold mb-4">
+        <Link to="/">Remix Scoped Params</Link>
+      </h1>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 block underline mb-4"
+        href="https://github.com/kiliman/remix-scoped-params"
+      >
+        https://github.com/kiliman/remix-scoped-params
+      </a>
+      <p className="mb-4">
+        Each tab can be paged, sorted, and filtered independently. The{' '}
+        <code>searchParams</code> are <i>scoped</i> per tab, so you can navigate
+        between tabs and still maintain the <code>searchParams</code>.
+      </p>
+      <Tab.Group
+        as="div"
+        key={location.pathname}
+        defaultIndex={Object.keys(tabs).indexOf(location.pathname.substring(1))}
+      >
         <Tab.List
           className="relative z-0 rounded-lg shadow flex divide-x divide-gray-200"
           aria-label="Tabs"
