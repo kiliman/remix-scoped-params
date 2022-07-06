@@ -11,6 +11,7 @@ import Pagination from '~/components/Pagination'
 import SortColumn from '~/components/SortColumn'
 import type { Person } from '~/models/people'
 import { getPeople, roles } from '~/models/people'
+import { debounce } from '~/utils'
 import { getScopedParams, useScopedParams } from '~/utils/scopedParams'
 
 const PAGE_SIZE = 10
@@ -102,7 +103,7 @@ export default function () {
               type="text"
               autoFocus
               defaultValue={search}
-              onChange={e => handleSearch(e.target.value)}
+              onChange={debounce(e => handleSearch(e.target.value), 150)}
               className="border-2 rounded w-96 px-2 py-1 mb-4"
             />
             <div>Select role:</div>

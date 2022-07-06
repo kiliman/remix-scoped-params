@@ -11,3 +11,15 @@ export function range(start: number, end: number, step: number = 1) {
 export function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
+
+export const debounce = (callback: (args: any) => void, wait: number) => {
+  let timeoutId: number | null = null
+  return (...args: any) => {
+    if (timeoutId) {
+      window.clearTimeout(timeoutId)
+    }
+    timeoutId = window.setTimeout(() => {
+      callback.apply(null, args)
+    }, wait)
+  }
+}
