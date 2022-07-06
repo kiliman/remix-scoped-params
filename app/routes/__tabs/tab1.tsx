@@ -96,11 +96,12 @@ export default function () {
           <div className="flex items-baseline gap-4">
             <div>Filter names:</div>
             <input
+              key={scope}
               name="query"
               placeholder="Search..."
               type="text"
               autoFocus
-              value={search}
+              defaultValue={search}
               onChange={e => handleSearch(e.target.value)}
               className="border-2 rounded w-96 px-2 py-1 mb-4"
             />
