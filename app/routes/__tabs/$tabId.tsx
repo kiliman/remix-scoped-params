@@ -28,8 +28,8 @@ type LoaderType = {
   end: number
 }
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const scope = new URL(request.url).pathname.substring(1)
+export const loader: LoaderFunction = async ({ request, params }) => {
+  const scope = params.tabId ?? 'tab1'
   const scopedParams = getScopedParams(request, scope)
   const search = scopedParams.get('search') ?? ''
   const role = scopedParams.get('role') ?? ''
