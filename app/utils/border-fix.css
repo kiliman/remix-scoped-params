@@ -1,0 +1,4 @@
+/* removes extra border at bottom of table */
+div:last-of-type > div:last-of-type > div:last-child > div:last-of-type {
+  border-style: none;
+}
