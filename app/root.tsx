@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node'
+import borderFix from '~/utils/border-fix.css'
 import {
   Links,
   LiveReload,
@@ -7,6 +8,15 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+
+export const links = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: borderFix,
+    },
+  ]
+}
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
